@@ -1,0 +1,124 @@
+/*
+
+M42===================================================================================
+
+DROP TABLE PERSON CASCADE CONSTRAINTS;
+CREATE TABLE PERSON (ID NUMBER, FIRST_NAME VARCHAR2(90), AGE NUMBER);
+
+DROP TABLE BOOK CASCADE CONSTRAINTS;
+CREATE TABLE BOOK (ID NUMBER, TITLE VARCHAR2(90), AUTHOR VARCHAR2(90), PRICE NUMBER);
+
+
+CREATE OR REPLACE PROCEDURE P1 AS BEGIN
+	INSERT INTO PERSON VALUES(2001, 'ABC', 22);
+	INSERT INTO PERSON VALUES(2002, 'XYZ', 24);
+	INSERT INTO PERSON VALUES(2003, 'TEST', 25);
+	INSERT INTO BOOK VALUES(3001, 'JAVA MADE EASY', 'VIJAY', 500);
+	INSERT INTO BOOK VALUES(3002, 'J2EE MADE EASY', 'VIJAY', 600);
+	INSERT INTO BOOK VALUES(3003, 'ANGULAR MADE EASY', 'VIJAY', 700);
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M42===================================================================================
+*/
+
+/*
+
+M43===================================================================================
+
+
+CREATE OR REPLACE PROCEDURE P2 AS BEGIN
+	INSERT INTO PERSON VALUES(2004, 'ABC', 22);
+	INSERT INTO PERSON VALUES(2005, 'XYZ', 24);
+	INSERT INTO PERSON VALUES(2006, 'TEST', 25);
+	INSERT INTO BOOK VALUES(3004, 'JAVA MADE EASY', 'VIJAY', 500);
+	INSERT INTO BOOK VALUES(3005, 'J2EE MADE EASY', 'VIJAY', 600);
+	INSERT INTO BOOK VALUES(3006, 'ANGULAR MADE EASY', 'VIJAY', 700);
+	UPDATE PERSON SET FIRST_NAME = 'VIJAY' WHERE ID = 2002;
+	DELETE FROM BOOK WHERE ID = 3003;
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M43===================================================================================
+*/
+
+/*
+M44===================================================================================
+
+
+CREATE OR REPLACE PROCEDURE P3 (ARG1 NUMBER,
+								ARG2 VARCHAR2,
+								ARG3 VARCHAR2,
+								ARG4 NUMBER) AS BEGIN
+	INSERT INTO BOOK VALUES(ARG1, ARG2, ARG3, ARG4);	
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M44===================================================================================
+*/
+
+/*
+
+M47===================================================================================
+
+
+CREATE OR REPLACE PROCEDURE P4 (ARG1 NUMBER,
+								ARG2 OUT VARCHAR2) AS BEGIN
+	SELECT FIRST_NAME INTO ARG2 FROM PERSON WHERE ID = ARG1;	
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M47===================================================================================
+*/
+
+/*
+
+M48===================================================================================
+
+
+CREATE OR REPLACE PROCEDURE P5 (ARG1 IN NUMBER,
+								ARG2 OUT VARCHAR,
+								ARG3 OUT VARCHAR) AS BEGIN
+	SELECT TITLE INTO ARG2 FROM BOOK WHERE ID = ARG1;
+	SELECT AUTHOR INTO ARG3 FROM BOOK WHERE ID = ARG1;	
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M48===================================================================================
+*/
+
+/*
+M49===================================================================================
+
+CREATE OR REPLACE PROCEDURE P6 (ARG1 IN OUT NUMBER) AS BEGIN
+	SELECT AGE INTO ARG1 FROM PERSON WHERE ID = ARG1;	
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M49===================================================================================
+*/
+
+/*
+M49===================================================================================
+
+CREATE OR REPLACE PROCEDURE P7 (ARG1 IN NUMBER, ARG2 OUT VARCHAR) AS BEGIN
+	SELECT TITLE INTO ARG2 FROM BOOK WHERE ID = ARG1;	
+END;
+
+SELECT * FROM PERSON;
+SELECT * FROM BOOK;
+
+M49===================================================================================
+*/

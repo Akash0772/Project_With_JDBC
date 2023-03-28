@@ -22,7 +22,7 @@ public class M1 {
 		stmt.execute(sql); // step-6
 		
 //		Process Result ( RESPONSE )
-		System.out.println("done"); // step-7
+		System.out.println("Successfully Created Table in Database"); // step-7
 		
 	}
 }
