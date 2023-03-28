@@ -1,18 +1,18 @@
-# Project_With_JDBC
+# Project_With_JDBC :+1:
 
-Basic =======================================================
+[x] #Basic 
 
 1. First Program
 2. DB Operation
-	a). Various ways of insert
-	b). Fetching
-	c). try cach and finally
-	d). Util dev and Tx Management
-	e). External Properties
-	f). Prepared Statement
-	g). Callable Statemnet
+   - Various ways of insert
+   - Fetching
+   - try cach and finally
+   - Util dev and Tx Management
+   - External Properties
+   - Prepared Statement
+   - Callable Statemnet
 
-Advance =========================================================
+[ ] Advance
 
 1. Scrollable And Updateable
 2. Batch Update
